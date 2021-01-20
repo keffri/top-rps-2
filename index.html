@@ -7,6 +7,122 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <script></script>
+    <p>Invoke game() to play.</p>
+    <script>
+      let playerScore = 0;
+      let computerScore = 0;
+
+      function computerPlay() {
+        const randomNumber = Math.floor(Math.random() * 3);
+        const computerChoice = ["Rock", "Paper", "Scissors"];
+
+        return computerChoice[randomNumber];
+      }
+
+      function computerSelection() {
+        return computerPlay();
+      }
+
+      function playerSelection() {
+        rps = prompt("Please select rock, paper, or scissors.");
+
+        if (rps !== null) {
+          rps = rps.toLowerCase();
+        }
+        switch (rps) {
+          case "rock":
+            return "Rock";
+            break;
+          case "paper":
+            return "Paper";
+            break;
+          case "scissors":
+            return "Scissors";
+            break;
+        }
+      }
+
+      function playRound() {
+        playerChoice = playerSelection();
+        computerChoice = computerSelection();
+
+        if (
+          (playerChoice == "Rock" && computerChoice == "Paper") ||
+          (playerChoice == "Paper" && computerChoice == "Scissors") ||
+          (playerChoice == "Scissors" && computerChoice == "Rock")
+        ) {
+          computerScore++;
+          console.log(
+            `Computer's ${computerChoice} beats Player's ${playerChoice}.`
+          );
+          console.log(
+            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
+          );
+        } else if (
+          (computerChoice == "Rock" && playerChoice == "Paper") ||
+          (computerChoice == "Paper" && playerChoice == "Scissors") ||
+          (computerChoice == "Scissors" && playerChoice == "Rock")
+        ) {
+          playerScore++;
+          console.log(
+            `Player's ${playerChoice} beats Computer's ${computerChoice}.`
+          );
+          console.log(
+            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
+          );
+        } else if (playerChoice === computerChoice) {
+          console.log(`Both player and computer selected ${playerChoice}`);
+          console.log(
+            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
+          );
+        }
+      }
+
+      function game2() {
+        for (let i = 1; i <= 5; i++) {
+          playRound();
+        }
+        if (playerScore > computerScore) {
+          console.log(
+            `Player wins with ${playerScore} points. Computer loses with ${computerScore} points.`
+          );
+        } else if (computerScore > playerScore) {
+          console.log(
+            `Computer wins with ${computerScore} points. Player loses with ${playerScore} points.`
+          );
+        } else {
+          console.log(
+            `Both player and computer tied with ${playerScore} points.`
+          );
+        }
+      }
+
+      function game() {
+        while (playerScore <= 5 || computerScore <= 5) {
+          if (computerScore === 5 || playerScore === 5) {
+            break;
+          }
+          playRound();
+        }
+
+        if (playerScore > computerScore) {
+          alert(
+            `Player wins with ${playerScore} points. Computer loses with ${computerScore} points.`
+          );
+        } else if (computerScore > playerScore) {
+          alert(
+            `Computer wins with ${computerScore} points. Player loses with ${playerScore} points.`
+          );
+        } else {
+          alert(`Both player and computer tied with ${playerScore} points.`);
+        }
+
+        playerScore = 0;
+        computerScore = 0;
+        game();
+      }
+
+      //   game();
+    </script>
   </body>
 </html>
