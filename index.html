@@ -9,8 +9,8 @@
   <body>
     <p>Invoke game() to play.</p>
     <script>
-      let playerScore = 0;
-      let computerScore = 0;
+      let playerScore;
+      let computerScore;
 
       function computerPlay() {
         const randomNumber = Math.floor(Math.random() * 3);
@@ -98,6 +98,9 @@
       }
 
       function game() {
+        playerScore = 0;
+        computerScore = 0;
+
         while (playerScore <= 5 || computerScore <= 5) {
           if (computerScore === 5 || playerScore === 5) {
             break;
@@ -116,10 +119,6 @@
         } else {
           alert(`Both player and computer tied with ${playerScore} points.`);
         }
-
-        playerScore = 0;
-        computerScore = 0;
-        game();
       }
 
       //   game();
