@@ -1,3 +1,3 @@
 Rock Paper Scissors
 
-Played in console.
+Basic DOM Manipulation
