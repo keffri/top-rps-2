@@ -13,7 +13,7 @@
     </header>
     <main class="mainContainer">
       <div class="gameTextContainer">
-        <h2 class="gameText">Welcome to DOM RPS</h2>
+        <h2 id="gameText">Welcome to DOM RPS</h2>
       </div>
       <div class="scoreContainer">
         <p class="playerScore">Player Score: <span id="pScore">0</span></p>
@@ -21,10 +21,10 @@
       </div>
       <div class="selectionContainer">
         <p class="computerSelection">
-          Computer Selection: <span id="cSelection">x</span>
+          Computer Selection: <span id="cSelection"></span>
         </p>
         <p class="playerSelection">
-          Player Selection: <space id="pSelection">y</space>
+          Player Selection: <space id="pSelection"></space>
         </p>
       </div>
       <div class="buttonContainer">
@@ -33,120 +33,7 @@
         <button class="btn" id="scissorsButton">Scissors</button>
       </div>
     </main>
-    <script>
-      let playerScore;
-      let computerScore;
-
-      function computerPlay() {
-        const randomNumber = Math.floor(Math.random() * 3);
-        const computerChoice = ["Rock", "Paper", "Scissors"];
-
-        return computerChoice[randomNumber];
-      }
-
-      function computerSelection() {
-        return computerPlay();
-      }
-
-      function playerSelection() {
-        rps = prompt("Please select rock, paper, or scissors.");
-
-        if (rps !== null) {
-          rps = rps.toLowerCase();
-        }
-        switch (rps) {
-          case "rock":
-            return "Rock";
-            break;
-          case "paper":
-            return "Paper";
-            break;
-          case "scissors":
-            return "Scissors";
-            break;
-        }
-      }
-
-      function playRound() {
-        playerChoice = playerSelection();
-        computerChoice = computerSelection();
-
-        if (
-          (playerChoice == "Rock" && computerChoice == "Paper") ||
-          (playerChoice == "Paper" && computerChoice == "Scissors") ||
-          (playerChoice == "Scissors" && computerChoice == "Rock")
-        ) {
-          computerScore++;
-          console.log(
-            `Computer's ${computerChoice} beats Player's ${playerChoice}.`
-          );
-          console.log(
-            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
-          );
-        } else if (
-          (computerChoice == "Rock" && playerChoice == "Paper") ||
-          (computerChoice == "Paper" && playerChoice == "Scissors") ||
-          (computerChoice == "Scissors" && playerChoice == "Rock")
-        ) {
-          playerScore++;
-          console.log(
-            `Player's ${playerChoice} beats Computer's ${computerChoice}.`
-          );
-          console.log(
-            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
-          );
-        } else if (playerChoice === computerChoice) {
-          console.log(`Both player and computer selected ${playerChoice}`);
-          console.log(
-            `Player Score: ${playerScore} | Computer Score: ${computerScore}`
-          );
-        }
-      }
-
-      function game2() {
-        for (let i = 1; i <= 5; i++) {
-          playRound();
-        }
-        if (playerScore > computerScore) {
-          console.log(
-            `Player wins with ${playerScore} points. Computer loses with ${computerScore} points.`
-          );
-        } else if (computerScore > playerScore) {
-          console.log(
-            `Computer wins with ${computerScore} points. Player loses with ${playerScore} points.`
-          );
-        } else {
-          console.log(
-            `Both player and computer tied with ${playerScore} points.`
-          );
-        }
-      }
-
-      function game() {
-        playerScore = 0;
-        computerScore = 0;
-
-        while (playerScore <= 5 || computerScore <= 5) {
-          if (computerScore === 5 || playerScore === 5) {
-            break;
-          }
-          playRound();
-        }
-
-        if (playerScore > computerScore) {
-          alert(
-            `Player wins with ${playerScore} points. Computer loses with ${computerScore} points.`
-          );
-        } else if (computerScore > playerScore) {
-          alert(
-            `Computer wins with ${computerScore} points. Player loses with ${playerScore} points.`
-          );
-        } else {
-          alert(`Both player and computer tied with ${playerScore} points.`);
-        }
-      }
-
-      //   game();
+<script src="script.js"></script>
     </script>
   </body>
 </html>
