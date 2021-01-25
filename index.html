@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOP RPS 2</title>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <p>Invoke game() to play.</p>
+    <header class="header">
+      <h1 class="title">TOP DOM RPS</h1>
+    </header>
+    <main class="mainContainer">
+      <div class="gameTextContainer">
+        <h2 class="gameText">Welcome to DOM RPS</h2>
+      </div>
+      <div class="scoreContainer">
+        <p class="playerScore">Player Score: <span id="pScore">0</span></p>
+        <p class="computerScore">Computer Score: <span id="cScore">0</span></p>
+      </div>
+      <div class="selectionContainer">
+        <p class="computerSelection">
+          Computer Selection: <span id="cSelection">x</span>
+        </p>
+        <p class="playerSelection">
+          Player Selection: <space id="pSelection">y</space>
+        </p>
+      </div>
+      <div class="buttonContainer">
+        <button class="btn" id="rockButton">Rock</button>
+        <button class="btn" id="paperButton">Paper</button>
+        <button class="btn" id="scissorsButton">Scissors</button>
+      </div>
+    </main>
     <script>
       let playerScore;
       let computerScore;

@@ -1,4 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #202020;
-  color: #fff;
+  height: 100vh;
+  background-color: #ccc;
+  font-family: monospace;
+}
+
+/**** HEADER ****/
+
+.header {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+/**** MAIN CONTAINER ****/
+
+.mainContainer {
+  height: 400px;
+}
+
+/**** GAME TEXT CONTAINER ****/
+
+.gameTextContainer {
+  padding: 1em 0;
+  text-align: center;
+}
+
+/* .gameText {
+} */
+
+/**** SCORE CONTAINER ****/
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  padding: 1em 0;
+  text-align: center;
+  margin: auto;
+}
+
+/* .playerScore {
+}
+
+.computerScore {
+} */
+
+/**** SELECTION CONTAINER ****/
+
+.selectionContainer {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  margin: auto;
+}
+
+/**** BUTTON CONTAINER ****/
+
+.buttonContainer {
+  padding: 2em 0;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
 }
