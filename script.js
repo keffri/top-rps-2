@@ -1,3 +1,5 @@
+const buttons = document.getElementById("buttons");
+
 const playerScore = document.getElementById("pScore");
 let pScore = 0;
 
@@ -20,18 +22,21 @@ const rockButton = document.getElementById("rockButton");
 rockButton.addEventListener("click", () => {
   playerSelection.textContent = "Rock";
   matchWinner("Rock", computerChoice());
+  checkWinner(pScore, cScore);
 });
 
 const paperButton = document.getElementById("paperButton");
 paperButton.addEventListener("click", () => {
   playerSelection.textContent = "Paper";
   matchWinner("Paper", computerChoice());
+  checkWinner(pScore, cScore);
 });
 
 const scissorsButton = document.getElementById("scissorsButton");
 scissorsButton.addEventListener("click", () => {
   playerSelection.textContent = "Scissors";
   matchWinner("Scissors", computerChoice());
+  checkWinner(pScore, cScore);
 });
 
 function matchWinner(playerPick, computerPick) {
@@ -54,3 +59,27 @@ function matchWinner(playerPick, computerPick) {
     gameText.textContent = `Both the player and the computer selected ${playerPick}.`;
   }
 }
+
+function checkWinner(playerScore, computerScore) {
+  if (playerScore === 5) {
+    gameText.textContent = `Player wins!`;
+    buttons.classList.add("hidden");
+  } else if (computerScore === 5) {
+    gameText.textContent = `Computer wins!`;
+    buttons.classList.add("hidden");
+  }
+}
+
+function resetGame() {
+  pScore = 0;
+  playerScore.textContent = pScore;
+  playerSelection.textContent = "";
+  cScore = 0;
+  computerScore.textContent = cScore;
+  computerSelection.textContent = "";
+  gameText.textContent = `Welcome to DOM RPS`;
+  buttons.classList.remove("hidden");
+}
+
+resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetGame);
