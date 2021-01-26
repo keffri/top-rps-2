@@ -34,9 +34,6 @@ body {
   text-align: center;
 }
 
-/* .gameText {
-} */
-
 /**** SCORE CONTAINER ****/
 
 .scoreContainer {
@@ -47,12 +44,6 @@ body {
   text-align: center;
   margin: auto;
 }
-
-/* .playerScore {
-}
-
-.computerScore {
-} */
 
 /**** SELECTION CONTAINER ****/
 
@@ -74,4 +65,20 @@ body {
   margin: auto;
   display: flex;
   justify-content: space-evenly;
+}
+
+/**** RESET CONTAINER ****/
+
+.resetContainer {
+  padding-top: 100px;
+  margin: auto;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+/**** HIDDEN ****/
+
+.hidden {
+  visibility: hidden;
 }
